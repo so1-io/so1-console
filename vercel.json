@@ -1,0 +1,19 @@
+{
+  "name": "so1-console",
+  "version": 2,
+  "buildCommand": "npm run build",
+  "framework": "nextjs",
+  "installCommand": "npm install",
+  "env": {
+    "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY": "@clerk_publishable_key",
+    "CLERK_SECRET_KEY": "@clerk_secret_key",
+    "NEXT_PUBLIC_BFF_URL": "@bff_url"
+  },
+  "envPattern": "^NEXT_PUBLIC_.*$|^CLERK_.*$",
+  "regions": ["sfo1"],
+  "functions": {
+    "api/**/*.ts": {
+      "maxDuration": 30
+    }
+  }
+}

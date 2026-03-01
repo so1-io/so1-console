@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+* {
+  @apply border-border;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @apply bg-background text-foreground;
+}
