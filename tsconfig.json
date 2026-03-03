@@ -19,8 +19,7 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "@so1/shared": ["../../platform-tools/so1-shared/src"]
+      "@/*": ["./src/*"]
     }
   },
   "include": [
