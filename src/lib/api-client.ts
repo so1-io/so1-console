@@ -1,4 +1,4 @@
-import { ErrorCode } from "@so1/shared";
+import { ErrorCode } from "@/shared";
 
 /**
  * BFF API client for typed, authenticated requests.
