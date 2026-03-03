@@ -22,13 +22,12 @@ export default async function AuthLayout({
   const { userId, orgId } = await requireAuth();
 
   // Org name can be fetched from Clerk if needed
-  // For now, using a placeholder
-  const orgName = orgId || "My Organization";
+  const orgName = orgId ? orgId : "Personal";
 
   return (
     <ErrorBoundary>
       <div className="flex flex-col min-h-screen">
-        <Navigation orgId={orgId} orgName={orgName} userId={userId} />
+        <Navigation orgId={orgId || ""} orgName={orgName} userId={userId} />
         <main className="flex-1">
           {children}
         </main>

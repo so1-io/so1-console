@@ -1,18 +1,16 @@
 import { auth } from "@clerk/nextjs/server";
-import { redirect } from "next/navigation";
 
 /**
- * Get the authenticated user or redirect to Clerk login.
+ * Get the authenticated user info.
+ * The middleware already protects routes, so this just extracts auth data.
  * This should only be called in Server Components.
  */
 export async function requireAuth() {
   const { userId, orgId } = await auth();
 
-  if (!userId || !orgId) {
-    redirect("/sign-in");
-  }
-
-  return { userId, orgId };
+  // Middleware handles redirect, so userId should always exist in protected routes
+  // orgId may be null if user hasn't selected an organization
+  return { userId: userId!, orgId: orgId || null };
 }
 
 /**
